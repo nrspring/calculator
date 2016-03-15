@@ -1,0 +1,23 @@
+﻿@using System.Web.Optimization
+@using Calculator.Web.App_Start
+<!DOCTYPE html>
+
+<html ng-app="mainAppModule" ngCloak class="ng-cloak">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>One calculator to rule them all ...</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet"/>
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/main.css" rel="stylesheet" />
+</head>
+<body>
+<div class="container">
+    @RenderBody()
+</div>
+    @Scripts.Render(BundleConfig.BundleValues.AppBasics)
+<script type="text/javascript">
+    var angularApp = angular.module('mainAppModule', []);
+</script>
+    @RenderSection("js", false)
+</body>
+</html>

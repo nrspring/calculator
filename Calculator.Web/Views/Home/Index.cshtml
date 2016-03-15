@@ -1,0 +1,37 @@
+﻿<div ng-controller="indexController">
+    <div class="row">
+        @{ Html.RenderPartial("PartialWell1");}
+        @{ Html.RenderPartial("PartialWell2");}
+        @{ Html.RenderPartial("PartialWell3");}
+        @{ Html.RenderPartial("PartialWell4");}
+        @{ Html.RenderPartial("PartialWell5");}
+        @{ Html.RenderPartial("PartialWell6");}
+    </div>
+
+    <div class="row">
+        <div class="col-lg-9">
+            <div class="form-group">
+                <label class="control-label">Enter expression here</label>
+                <input class="form-control" ng-model="expression" />
+            </div>
+        </div>
+        <div class="col-lg-2">
+            <div class="form-group">
+                <label class="control-label">Total</label>
+                <input class="form-control" ng-model="totalSum" readonly="readonly" />
+            </div>
+        </div>
+        <div class="col-lg-1">
+            <input type="button" class="btn btn-primary" id="btnCalculate" ng-click="calculateClick()" ng-show="!isCalculating" value="Calculate!"/>
+            <i class="fa fa-spinner fa-pulse fa-2x spinner-offset" ng-show="isCalculating"></i>
+        </div>
+    </div>
+    <div class="row" ng-show="hasError">
+        <div class="col-lg-9 alert alert-danger">
+            {{errorMessage}}
+        </div>
+    </div>
+</div>
+@section js {
+    <script src="~/scripts/IndexController.js"></script>
+}
